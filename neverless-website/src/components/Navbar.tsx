@@ -1,16 +1,27 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Navbar = () => {
     return (
-        <nav className="bg-gray-800 p-4">
-            <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
+        <nav>
+            <div className="max-w-7xl mx-auto flex items-center justify-between">
                 {/* Left Side Links */}
-                <div className="flex items-center space-x-8">
+                <div className="relative z-10 flex items-center space-x-8">
                     <Link href="/">
-                        <a className="text-white font-bold text-lg"></a>
+                        <img src="logo.png" width="239.1125" height="125" color="transparent"></img>
                     </Link>
                 </div>
             </div>
         </nav>
-    )
+    );
 };
+
+const NavLink = ({ href, label }) => {
+    return (
+        <Link href={href}>
+            <a className="text-white hover:text-gray-300">{label}</a>
+        </Link>
+    );
+};
+
+export default Navbar;
