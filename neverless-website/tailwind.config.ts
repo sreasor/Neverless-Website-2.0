@@ -8,9 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: 
-      {
-        'bg1': "url('/liveband.jpg')"
+      backgroundImage: {
+        'bg1': "url('/liveband.jpg')",
+        'bg2': "url('/album2.jpg')"
+      },
+      minWidth: {
+        '80': '80%',  // Custom minWidth value
       },
       fontFamily: {
         'home': ['Cinzel Decorative', 'sans-serif']

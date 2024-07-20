@@ -7,7 +7,7 @@ const Navbar = () => {
             <ul className="z-10 flex items-center justify-start space-x-20 nav-links1"> 
                 <NavLink href="/" label="Home"/>
                 <NavLink href="/Music" label="Music"/>
-                <NavLink href="/" label="Dates"/>
+                <NavLink href="/#datesA" label="Dates"/>
             </ul>
             <div className="">
                 <Link href="/">

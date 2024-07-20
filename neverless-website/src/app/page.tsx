@@ -4,6 +4,15 @@ import Image from "next/image";
 import Navbar from "../components/Navbar";
 import { useState, useEffect } from 'react';
 
+// Function to format date to dd/mm/yyyy
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+}
+
 export default function Home() {
 
   const [tourDates, setTourDates] = useState([]);
@@ -21,7 +30,7 @@ export default function Home() {
 
   return (
     <main>
-      <section id="home"  className="font-home flex min-h-screen items-center flex-col p-10 bg-bg1 bg-cover bg-center bg-gradient-overlay">
+      <section id="home"  className="font-home flex min-h-screen w-full items-center flex-col p-10 bg-bg1 bg-cover bg-center bg-gradient-overlay">
         <Navbar/>
         <div className="flex justify-between flex-col pt-40">
           <p className="text-center z-10 font-bold" style={{fontSize: '70px', color: '#ffa645'}}>Neverless</p>
@@ -29,17 +38,17 @@ export default function Home() {
           <a href="#datesA" className="z-10 hero-btn">Catch us at a show near you!</a>
         </div>
       </section>
-      <section id="datesA">
-      <ul>
-        {tourDates.map((date) => (
-          <li key={date.id}>
-            <p>{date.date.toString()}</p>
-            <p>{date.venue}</p>
-            <p>{date.city}, {date.state}</p>
-            <a href={date.ticket_url}>Buy tickets</a>
-            <p>{date.address}</p>
-          </li>
-      ))}
+      <section id="datesA" className="font-home min-h-screen bg-bg2 bg-cover items-center flex flex-col">
+        <p className="text-center z-10 font-bold mt-12 mb-12" style={{fontSize: '50px', color: '#fff'}}>Upcoming Tour Dates</p>
+        <ul className="flex flex-col items-center w-full">
+          {tourDates.map((date) => (
+            <a href={date.ticket_url} className='w-4/5 hover:shadow-2xl transition ease-in duration-700 pointer-events:auto'>
+              <li key={date.id} className="rounded-2xl text-center pt-8 pb-8" style={{background: '#f9ca3f', border: '2px solid #e48734'}}>
+                <p className="font-bold pb-5" style={{color: 'black', fontSize:'20px'}}>{formatDate(date.date)} - {date.city}, {date.state} - {date.venue}</p>
+                <p style={{color: '#a93a24',}}>{date.address}</p>
+              </li>
+            </a>
+          ))}
       </ul>
 
       </section>
