@@ -4,13 +4,12 @@ import Image from "next/image";
 import Navbar from "../components/Navbar";
 import { useState, useEffect } from 'react';
 
-// Function to format date to dd/mm/yyyy
 const formatDate = (dateString) => {
   const date = new Date(dateString);
-  const day = String(date.getDate()).padStart(2, '0');
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const year = date.getFullYear();
-  return `${day}/${month}/${year}`;
+  const day = String(date.getUTCDate()).padStart(2, '0');
+  const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+  const year = date.getUTCFullYear();
+  return `${month}/${day}/${year}`;
 }
 
 export default function Home() {
@@ -21,7 +20,10 @@ export default function Home() {
     {
       const res = await fetch('/api/tourDates');
       const data = await res.json();
-      setTourDates(data);
+
+      // sort the data
+      const sortedData = data.sort((a, b) => new Date(a.date) - new Date(b.date));
+      setTourDates(sortedData);
       console.log(data);
     }
     fetchTourDates();
@@ -38,9 +40,9 @@ export default function Home() {
           <a href="#datesA" className="z-10 hero-btn">Catch us at a show near you!</a>
         </div>
       </section>
-      <section id="datesA" className="font-home min-h-screen bg-bg2 bg-cover items-center flex flex-col">
+      <section id="datesA" className="font-home min-h-screen bg-bg2 bg-cover items-center flex flex-col pb-20">
         <p className="text-center z-10 font-bold mt-12 mb-12" style={{fontSize: '50px', color: '#fff'}}>Upcoming Tour Dates</p>
-        <ul className="flex flex-col items-center w-full">
+        <ul className="flex flex-col items-center w-full gap-8">
           {tourDates.map((date) => (
             <a href={date.ticket_url} className='w-4/5 hover:shadow-2xl transition ease-in duration-700 pointer-events:auto'>
               <li key={date.id} className="rounded-2xl text-center pt-8 pb-8" style={{background: '#f9ca3f', border: '2px solid #e48734'}}>
