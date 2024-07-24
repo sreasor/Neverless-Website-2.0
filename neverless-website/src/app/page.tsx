@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Navbar from "../components/Navbar";
+import LoginModal from "../components/LoginModal";
 import { useState, useEffect } from 'react';
 
 const formatDate = (dateString) => {
@@ -29,11 +30,22 @@ export default function Home() {
     fetchTourDates();
   }, []);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  }
+
 
   return (
-    <main>
+    <main className="no-scroll">
       <section id="home"  className="font-home flex min-h-screen w-full items-center flex-col p-10 bg-bg1 bg-cover bg-center bg-gradient-overlay">
-        <Navbar/>
+        <Navbar onModalOpen={handleOpenModal}/>
+        <LoginModal isOpen={isModalOpen} onClose={handleCloseModal}></LoginModal>
         <div className="flex justify-between flex-col pt-40">
           <p className="text-center z-10 font-bold" style={{fontSize: '70px', color: '#ffa645'}}>Neverless</p>
           <p className="text-center z-10 mb-12" style={{fontSize: '20px', color: '#ffa645'}}>New album: out now!</p>

@@ -3,9 +3,11 @@ import Navbar from "../../components/Navbar";
 
 export default function Home() {
   return (
-    <main className="font-home flex min-h-screen flex-col p-5 bg-bg1 bg-cover bg-center bg-gradient-overlay">
-      <Navbar/>
-      <p>This is the About page</p>
+    <main>
+      <section id="about" className="font-home flex min-h-screen w-full items-center flex-col p-10 bg-bg1 bg-cover bg-center bg-gradient-overlay">
+        <Navbar/>
+        <p>This is the About page</p>
+      </section>
     </main>
   );
 }

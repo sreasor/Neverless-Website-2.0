@@ -1,18 +1,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Navbar = () => {
+const Navbar = ({ onModalOpen }) => {
     return (
-        <div className="z-10 flex justify-between space-x-40 mx-20">
+        <div className="z-10 flex justify-between space-x-20 mx-20">
             <ul className="z-10 flex items-center justify-start space-x-20 nav-links1"> 
                 <NavLink href="/" label="Home"/>
                 <NavLink href="/Music" label="Music"/>
                 <NavLink href="/#datesA" label="Dates"/>
             </ul>
             <div className="">
-                <Link href="/">
+                <button onClick= {onModalOpen}>
                     <img src="logo.png" width="239.1125" height="125" color="transparent"></img>
-                </Link>
+                </button>
             </div>
             <ul className="z-10 flex items-center justify-start space-x-12 nav-links1"> 
                 <NavLink href="/Merch" label="Merch"/>
