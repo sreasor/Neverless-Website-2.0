@@ -18,6 +18,11 @@ const config: Config = {
       fontFamily: {
         'home': ['Cinzel Decorative', 'sans-serif']
       },
+      screens: {
+        'sm': '400px',  // Minimum width of 400px
+        'md': '700px',  // Minimum width of 700px
+        'lg': '1400px', // Minimum width of 1920px
+      },
     },
   },
   plugins: [],

@@ -11,7 +11,6 @@ const LoginModal = ({ isOpen, onClose }) => {
         event.preventDefault();
 
         try {
-            console.log("before response");
             const response = await fetch('/api/login', {
                 method: 'POST',
                 headers: {
@@ -21,7 +20,6 @@ const LoginModal = ({ isOpen, onClose }) => {
             });
 
             const data = await response.json();
-
             if (response.ok) {
                 if (data.role === 'admin') {
                     router.push('/Admin-dashboard');
@@ -41,7 +39,7 @@ const LoginModal = ({ isOpen, onClose }) => {
 
     return (
         <div className="transition-all z-50 fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <div className="w-1/4 h-1/2 p-6 bg-white shadow-md rounded flex flex-col items-center border-4 border-solid" style={{borderColor: '#ffa645'}}>
+            <div className="h-1/2 w-1/2 p-6 bg-white shadow-md rounded flex flex-col items-center border-4 border-solid" style={{borderColor: '#ffa645'}}>
                 <form onSubmit={handleLogin} className="flex flex-col w-full items-center mb-4">
                     <input 
                         type="text" 
@@ -60,9 +58,9 @@ const LoginModal = ({ isOpen, onClose }) => {
                         style = {{color: 'black'}}
                     />
                     {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
-                    <button type="submit" className="h-12 w-16 text-white p-2 rounded" style={{backgroundColor: '#ffa645'}}>Login</button>
+                    <button type="submit" className="h-12 w-1/2 text-white p-2 rounded" style={{backgroundColor: '#ffa645'}}>Login</button>
                 </form>
-                <button onClick={onClose} className="h-12 w-16 text-white p-2 rounded bg-gray-500">Close</button>
+                <button onClick={onClose} className="h-12 w-1/2 text-white p-2 rounded bg-gray-500">Close</button>
             </div>
         </div> 
     );

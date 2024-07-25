@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 const Navbar = ({ onModalOpen }) => {
     return (
-        <div className="z-10 flex justify-between space-x-20 mx-20">
-            <ul className="z-10 flex items-center justify-start space-x-20 nav-links1"> 
+        <div className="z-10 flex justify-between sm:space-x-10 lg:space-x-20">
+            <ul className="z-10 flex items-center sm:space-y-4 lg:space-y-0 lg:space-x-20 nav-links1 sm:flex-col lg:flex-row"> 
                 <NavLink href="/" label="Home"/>
                 <NavLink href="/Music" label="Music"/>
                 <NavLink href="/#datesA" label="Dates"/>
@@ -14,7 +14,7 @@ const Navbar = ({ onModalOpen }) => {
                     <img src="logo.png" width="239.1125" height="125" color="transparent"></img>
                 </button>
             </div>
-            <ul className="z-10 flex items-center justify-start space-x-12 nav-links1"> 
+            <ul className="z-10 flex items-center sm:space-y-4 lg:space-y-0 lg:space-x-12 nav-links1 sm:flex-col lg:flex-row"> 
                 <NavLink href="/Merch" label="Merch"/>
                 <NavLink href="/About" label="About"/>
                 <NavLink href="/Contact" label="Contact"/>

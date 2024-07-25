@@ -49,7 +49,7 @@ export default function Home() {
         <div className="flex justify-between flex-col pt-40">
           <p className="text-center z-10 font-bold" style={{fontSize: '70px', color: '#ffa645'}}>Neverless</p>
           <p className="text-center z-10 mb-12" style={{fontSize: '20px', color: '#ffa645'}}>New album: out now!</p>
-          <a href="#datesA" className="z-10 hero-btn">Catch us at a show near you!</a>
+          <a href="#datesA" className="z-10 hero-btn text-center">Catch us at a show near you!</a>
         </div>
       </section>
       <section id="datesA" className="font-home min-h-screen bg-bg2 bg-cover items-center flex flex-col pb-20">
