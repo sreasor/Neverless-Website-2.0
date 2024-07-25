@@ -21,12 +21,12 @@ const LoginModal = ({ isOpen, onClose }) => {
 
             const data = await response.json();
             if (response.ok) {
+                onClose();
                 if (data.role === 'admin') {
                     router.push('/Admin-dashboard');
                 } else {
                     router.push('/user-dashboard');
                 }
-                onClose();
             } else {
                 setError(data.message);
             }

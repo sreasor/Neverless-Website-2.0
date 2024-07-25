@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Navbar from "../components/Navbar";
 import LoginModal from "../components/LoginModal";
-import { useState, useEffect } from 'react';
 
 const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -16,9 +16,12 @@ const formatDate = (dateString) => {
 export default function Home() {
 
   const [tourDates, setTourDates] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
   useEffect(() => {
-    const fetchTourDates = async () => 
-    {
+    const fetchTourDates = async () => {
       const res = await fetch('/api/tourDates');
       const data = await res.json();
 
@@ -30,22 +33,28 @@ export default function Home() {
     fetchTourDates();
   }, []);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  useEffect(() => {
+    const query = searchParams.get('modal');
+    if (query === 'login') {
+      setIsModalOpen(true);
+    }
+  }, [searchParams]);
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
+    router.push('?modal=login'); // Update URL with query parameter
   }
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+    router.push('/'); // Redirect back to home (or handle as needed)
   }
-
 
   return (
     <main className="no-scroll">
-      <section id="home"  className="font-home flex min-h-screen w-full items-center flex-col p-10 bg-bg1 bg-cover bg-center bg-gradient-overlay">
-        <Navbar onModalOpen={handleOpenModal}/>
-        <LoginModal isOpen={isModalOpen} onClose={handleCloseModal}></LoginModal>
+      <section id="home" className="font-home flex min-h-screen w-full items-center flex-col p-10 bg-bg1 bg-cover bg-center bg-gradient-overlay">
+        <Navbar onModalOpen={handleOpenModal} />
+        <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
         <div className="flex justify-between flex-col pt-40">
           <p className="text-center z-10 font-bold" style={{fontSize: '70px', color: '#ffa645'}}>Neverless</p>
           <p className="text-center z-10 mb-12" style={{fontSize: '20px', color: '#ffa645'}}>New album: out now!</p>
@@ -63,8 +72,7 @@ export default function Home() {
               </li>
             </a>
           ))}
-      </ul>
-
+        </ul>
       </section>
     </main>
   );
