@@ -58,9 +58,9 @@ const LoginModal = ({ isOpen, onClose }) => {
                         style = {{color: 'black'}}
                     />
                     {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
-                    <button type="submit" className="h-12 w-1/2 text-white p-2 rounded" style={{backgroundColor: '#ffa645'}}>Login</button>
+                    <button type="submit" className="h-12 w-1/2 text-white p-2 rounded hover:scale-110 duration-300" style={{backgroundColor: '#ffa645'}}>Login</button>
                 </form>
-                <button onClick={onClose} className="h-12 w-1/2 text-white p-2 rounded bg-gray-500">Close</button>
+                <button onClick={onClose} className="h-12 w-1/2 text-white p-2 rounded bg-gray-500 hover:scale-110 duration-300">Close</button>
             </div>
         </div> 
     );

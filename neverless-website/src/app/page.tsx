@@ -65,7 +65,7 @@ export default function Home() {
         <p className="text-center z-10 font-bold mt-12 mb-12" style={{fontSize: '50px', color: '#fff'}}>Upcoming Tour Dates</p>
         <ul className="flex flex-col items-center w-full gap-8">
           {tourDates.map((date) => (
-            <a href={date.ticket_url} className='w-4/5 hover:shadow-2xl transition ease-in duration-700 pointer-events:auto'>
+            <a href={date.ticket_url} className='w-4/5 hover:scale-110 duration-300 pointer-events:auto'>
               <li key={date.id} className="rounded-2xl text-center pt-8 pb-8" style={{background: '#f9ca3f', border: '2px solid #e48734'}}>
                 <p className="font-bold pb-5" style={{color: 'black', fontSize:'20px'}}>{formatDate(date.date)} - {date.city}, {date.state} - {date.venue}</p>
                 <p style={{color: '#a93a24',}}>{date.address}</p>

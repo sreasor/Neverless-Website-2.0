@@ -11,7 +11,7 @@ const Navbar = ({ onModalOpen }) => {
             </ul>
             <div className="">
                 <button onClick= {onModalOpen}>
-                    <img src="logo.png" width="239.1125" height="125" color="transparent"></img>
+                    <img src="logo.png" width="239.1125" height="125" color="transparent" className="hover:-translate-y-1 hover:scale-110 duration-300"></img>
                 </button>
             </div>
             <ul className="z-10 flex items-center sm:space-y-4 lg:space-y-0 lg:space-x-12 nav-links1 sm:flex-col lg:flex-row"> 
