@@ -33,6 +33,9 @@ const LoginModal = ({ isOpen, onClose }) => {
         } catch (error) {
             setError('An error occurred during login.');
         }
+
+        setUsername('');
+        setPassword('');
     }
 
     if (!isOpen) return null;
@@ -42,7 +45,7 @@ const LoginModal = ({ isOpen, onClose }) => {
             <div className="h-1/2 w-1/2 p-6 bg-white shadow-md rounded flex flex-col items-center border-4 border-solid" style={{borderColor: '#ffa645'}}>
                 <form onSubmit={handleLogin} className="flex flex-col w-full items-center mb-4">
                     <input 
-                        type="text" 
+                        type="email" 
                         placeholder="Username" 
                         value={username} 
                         onChange={(e) => setUsername(e.target.value)} 

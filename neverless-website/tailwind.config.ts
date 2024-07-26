@@ -10,10 +10,13 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'bg1': "url('/liveband.jpg')",
-        'bg2': "url('/album2.jpg')"
+        'bg2': "url('/album2.jpg')",
+        'bg3': "url('/music.jpg')"
       },
       minWidth: {
-        '80': '80%',  // Custom minWidth value
+        '80': '80%',
+        '1/5': '20%',
+        '1/3': '66.66666%'
       },
       fontFamily: {
         'home': ['Cinzel Decorative', 'sans-serif']

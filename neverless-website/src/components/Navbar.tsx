@@ -14,7 +14,7 @@ const Navbar = ({ onModalOpen }) => {
                     <img src="logo.png" width="239.1125" height="125" color="transparent" className="hover:-translate-y-1 hover:scale-110 duration-300"></img>
                 </button>
             </div>
-            <ul className="z-10 flex items-center sm:space-y-4 lg:space-y-0 lg:space-x-12 nav-links1 sm:flex-col lg:flex-row"> 
+            <ul className="z-10 flex items-center sm:space-y-4 lg:space-y-0 lg:space-x-20 nav-links1 sm:flex-col lg:flex-row"> 
                 <NavLink href="/Merch" label="Merch"/>
                 <NavLink href="/About" label="About"/>
                 <NavLink href="/Contact" label="Contact"/>
