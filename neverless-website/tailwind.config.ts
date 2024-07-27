@@ -11,7 +11,9 @@ const config: Config = {
       backgroundImage: {
         'bg1': "url('/liveband.jpg')",
         'bg2': "url('/album2.jpg')",
-        'bg3': "url('/music.jpg')"
+        'bg3': "url('/music.jpg')",
+        'bg4': "url('/flea.jpg')",
+        'bg5': "url('/About.jpg')"
       },
       minWidth: {
         '80': '80%',

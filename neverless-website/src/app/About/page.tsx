@@ -1,12 +1,46 @@
-import Image from "next/image";
+"use client";
+
 import Navbar from "../../components/Navbar";
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import LoginModal from "../../components/LoginModal";
 
 export default function Home() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const query = searchParams.get('modal');
+    if (query === 'login') {
+      setIsModalOpen(true);
+    }
+  }, [searchParams]);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+    router.push('?modal=login'); // Update URL with query parameter
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    router.push('/Merch'); // Redirect back to home (or handle as needed)
+  }
+
   return (
     <main>
-      <section id="about" className="font-home flex min-h-screen w-full items-center flex-col p-10 bg-bg1 bg-cover bg-center bg-gradient-overlay">
-        <Navbar/>
-        <p>This is the About page</p>
+      <section id="about" className="font-home flex min-h-screen w-full items-center flex-col p-10 bg-bg5 bg-cover bg-center bg-gradient-overlay">
+        <Navbar onModalOpen={handleOpenModal}/>
+        <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
+        <p className="z-10 text-center mt-32" style={{fontSize: '30px'}}>
+          Neverless is a high-energy alternative rock band formed <br></br>
+          in 2018 from Sarasota, FL. Inspired by a vision to blend <br></br>
+          genres and break musical barriers, Neverless is sure to give <br></br>
+          fans of any genre something to appreciate. From metal to <br></br>
+          punk, and jazz to funk (as well as everything in between), <br></br>
+          Neverless brings it all!
+        </p>
       </section>
     </main>
   );
