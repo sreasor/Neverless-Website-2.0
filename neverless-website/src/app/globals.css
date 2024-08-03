@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -94,4 +96,116 @@ body {
 /* Hide scrollbar for Firefox */
 .no-scroll::-webkit-scrollbar {
   display: none;
+}
+
+.albumImage{
+  height: 402px;
+  width: 402px;
+}
+
+@media (max-width: 800px){
+.albumImage:hover{
+  transform: scale(1.2);
+  transition: transform 300ms ease;
+}
+}
+
+.container {
+  position: relative;
+  overflow: visible;
+  width: 402px;
+}
+
+.hide1 {
+  display: none;
+  transform: scale(0);
+}
+
+.hide2 {
+  display: none;
+  transform: scale(0);
+}
+
+.hide3 {
+  display: none;
+  transform: scale(0);
+}
+
+.hide4 {
+  display: none;
+  transform: scale(0);
+}
+
+.hide5 {
+  display: none;
+  transform: scale(0);
+}
+
+@media (min-width: 800px)
+{
+  .albumImage:hover{
+    cursor: pointer;
+  }
+  .container:hover{
+    width: 804px;
+  }
+  
+  .container:hover .hide1{
+    display: block;
+    transform: scale(4) translateX(+80px);
+  }
+  
+  .container .hide1:hover{
+    display: block;
+    transform: scale(5) translateX(+66px);
+  }
+  
+  .icon-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem; /* Adjust to match the icon size */
+    width: 2rem; /* Adjust to match the icon size */
+    background: transparent;
+  }
+  
+  .container:hover .hide2{
+    display: block;
+    transform: scale(4);
+  }
+  
+  .container .hide2:hover{
+    display: block;
+    transform: scale(5);
+  }
+
+  .container:hover .hide3{
+    display: block;
+    transform: scale(4) translateX(+40px);
+  }
+  
+  .container .hide3:hover{
+    display: block;
+    transform: scale(5) translateX(+33px);
+  }
+
+  .container:hover .hide4{
+    display: block;
+    transform: scale(4) translateX(-40px);
+  }
+  
+  .container .hide4:hover{
+    display: block;
+    transform: scale(5) translateX(-33px);
+  }
+
+  .container:hover .hide5{
+    display: block;
+    transform: scale(4) translateX(-80px);
+  }
+  
+  .container .hide5:hover{
+    display: block;
+    transform: scale(5) translateX(-66px);
+  }
 }

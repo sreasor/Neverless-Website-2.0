@@ -13,7 +13,8 @@ const config: Config = {
         'bg2': "url('/album2.jpg')",
         'bg3': "url('/music.jpg')",
         'bg4': "url('/flea.jpg')",
-        'bg5': "url('/About.jpg')"
+        'bg5': "url('/About.jpg')",
+        'bg6': "url('/RRU.jpg')"
       },
       minWidth: {
         '80': '80%',
@@ -21,7 +22,9 @@ const config: Config = {
         '1/3': '66.66666%'
       },
       fontFamily: {
-        'home': ['Cinzel Decorative', 'sans-serif']
+        'home': ['Cinzel Decorative', 'sans-serif'],
+        'music': ['Amatic SC', 'sans-serif'],
+        'merch': ['Monomaniac One', 'sans-serif'],
       },
       screens: {
         'sm': '400px',  // Minimum width of 400px

@@ -31,10 +31,10 @@ export default function Home() {
 
   return (
     <main>
-      <section id="Merch" className="font-home flex min-h-screen w-full items-center flex-col p-10 bg-bg4 bg-cover bg-center bg-gradient-overlay">
+      <section id="Merch" className="font-merch flex min-h-screen w-full items-center flex-col p-10 bg-bg4 bg-cover bg-center bg-gradient-overlay">
         <Navbar onModalOpen={handleOpenModal}/>
         <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
-        <h1 className="mt-40 z-10" style={{fontSize: '60px'}}>Merch coming soon!</h1>
+        <h1 className="mt-40 z-10 text-center" style={{fontSize: '80px'}}>Merch coming soon!</h1>
       </section>
     </main>
   );

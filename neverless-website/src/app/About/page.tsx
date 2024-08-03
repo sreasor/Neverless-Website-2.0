@@ -25,7 +25,7 @@ export default function Home() {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    router.push('/Merch'); // Redirect back to home (or handle as needed)
+    router.push('/About'); // Redirect back to home (or handle as needed)
   }
 
   return (
