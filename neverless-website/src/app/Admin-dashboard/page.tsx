@@ -2,11 +2,14 @@
 
 import {useState} from 'react';
 import {useRouter} from 'next/navigation';
+import SendEmailModal from '@/components/sendEmailModal';
 
 const AdminDashboard = () => {
 
-    const [pageState, setPageState] = useState('');
     const router = useRouter();
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const handleClose = () => {setModalOpen(false)};
     
     return (
         <main>
@@ -30,10 +33,12 @@ const AdminDashboard = () => {
                     </div>
                     <h1 className="text-black text-center mt-32" style={{fontSize: '30px'}}>Woah-oh-oh! Welcome to the cool people club (the inner workings of neverlessband.com)<br></br>
                     What would a handsome young lad or lass like you be wanting to do on this fine day?</h1>
-                    <div className="flex flex-row justify-center mt-20">
+                    <div className="flex flex-row justify-center mt-20 space-x-20">
                         <button onClick={() => router.push('/Edit-Dates')}className="text-black h-16 w-48 rounded-2xl hover:-translate-y-1 hover:scale-110 duration-300 hover:shadow-2xl" style={{fontSize: '20px', background: '#f9ca3f'}}>Edit dem dates!</button>
+                        <button onClick={() => setModalOpen(true)}className="text-black h-16 w-48 rounded-2xl hover:-translate-y-1 hover:scale-110 duration-300 hover:shadow-2xl" style={{fontSize: '20px', background: '#f9ca3f'}}>Send an Email</button>
                     </div>
                 </div>
+                <SendEmailModal isModal = {modalOpen} onClose={handleClose}></SendEmailModal>
             </section>
         </main>
     );

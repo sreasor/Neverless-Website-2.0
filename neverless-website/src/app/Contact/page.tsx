@@ -14,6 +14,7 @@ export default function Home() {
   const [fName, setFName] = useState('');
   const [lName, setLName] = useState('');
   const [error, setError] = useState('');
+  const [confirmation, setConfirmation] = useState('');
 
   useEffect(() => {
     const query = searchParams.get('modal');
@@ -51,8 +52,10 @@ export default function Home() {
       const data = await response.json();
       if (!response.ok) {
         setError(data.message);
+        setConfirmation('');
       }
       else{
+        setConfirmation(data.message);
         setError('');
       }
     } catch (error) {
@@ -102,7 +105,8 @@ export default function Home() {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+            {error && <p className="font-bold text-red-500 text-md mb-2">{error}</p>}
+            {confirmation && <p className="font-bold text-green-500 text-md mb-2">{confirmation}</p>}
             <button type="submit" className="h-12 w-1/2 text-white p-2 rounded hover:scale-110 duration-300" style={{backgroundColor: '#ffa645'}}>Submit</button>
           </form>
         </div>

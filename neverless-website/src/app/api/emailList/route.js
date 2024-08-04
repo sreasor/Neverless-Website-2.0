@@ -19,7 +19,7 @@ export async function POST(req) {
 
             if (result[0].affectedRows > 0) {
                 return new Response(
-                    JSON.stringify({message: "record successfully created"}),
+                    JSON.stringify({message: "We'll be in touch soon!"}),
                     {
                         status: 201,
                         headers: { 'Content-Type': 'application/json' }
@@ -56,5 +56,16 @@ export async function POST(req) {
                 },
             }
         );
+    }
+}
+
+export async function GET() {
+    try {
+        const rows = await db.query('SELECT firstName, email FROM `MailingList`;');
+        const res = new Response(JSON.stringify(rows), { status: 200 });
+        return res;
+    } catch (error)
+    {
+        return new Response(JSON.stringify({ error: 'Failed to grab recipients from database' }), { status: 500 });
     }
 }
