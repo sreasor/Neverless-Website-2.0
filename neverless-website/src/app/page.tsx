@@ -5,7 +5,17 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Navbar from "../components/Navbar";
 import LoginModal from "../components/LoginModal";
 
-const formatDate = (dateString) => {
+interface TourDate {
+  date: string; // Assuming the date is a string; if it's a Date object, use Date instead
+  address: string;
+  city: string;
+  id: number;
+  state: string;
+  ticket_url: string;
+  venue: string;
+}
+
+const formatDate = (dateString: string) => {
   const date = new Date(dateString);
   const day = String(date.getUTCDate()).padStart(2, '0');
   const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // Months are zero-indexed
@@ -15,7 +25,7 @@ const formatDate = (dateString) => {
 
 export default function Home() {
 
-  const [tourDates, setTourDates] = useState([]);
+  const [tourDates, setTourDates] = useState<TourDate[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -23,10 +33,10 @@ export default function Home() {
   useEffect(() => {
     const fetchTourDates = async () => {
       const res = await fetch('/api/tourDates');
-      const data = await res.json();
+      const data: TourDate[] = await res.json();
 
       // sort the data
-      const sortedData = data.sort((a, b) => new Date(a.date) - new Date(b.date));
+      const sortedData = data.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
       setTourDates(sortedData);
       console.log(data);
     }

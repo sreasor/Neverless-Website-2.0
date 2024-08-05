@@ -1,7 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Navbar = ({ onModalOpen }) => {
+interface NavbarProps{
+    onModalOpen: () => void;
+}
+
+const Navbar = ({ onModalOpen }: NavbarProps) => {
     return (
         <div className="font-home z-10 flex justify-between sm:space-x-10 lg:space-x-20">
             <ul className="z-10 flex items-center sm:space-y-4 lg:space-y-0 lg:space-x-28 nav-links1 sm:flex-col lg:flex-row"> 
@@ -23,7 +27,12 @@ const Navbar = ({ onModalOpen }) => {
     );
 };
 
-const NavLink = ({ href, label }) => {
+interface NavLinkProps{
+    href: string;
+    label: string;
+}
+
+const NavLink = ({ href, label }: NavLinkProps) => {
     return (
         <li className="nav-item relative">
             <Link href={href} className="no-underline text-xl" style={{fontSize: '30px', color: '#ffa645'}}>

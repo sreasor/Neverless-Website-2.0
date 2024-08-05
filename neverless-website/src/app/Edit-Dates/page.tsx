@@ -7,6 +7,16 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 import AddDateModal from "../../components/AddDateModal"
 
+interface TourDate {
+    date: string; // Assuming the date is a string; if it's a Date object, use Date instead
+    address: string;
+    city: string;
+    id: number;
+    state: string;
+    ticket_url: string;
+    venue: string;
+  }
+
 
 const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -18,14 +28,15 @@ const formatDate = (dateString: string) => {
 
 const EditDates = () => {
 
-    const [tourDates, setTourDates] = useState([]);
+    const [tourDates, setTourDates] = useState<TourDate[]>([]);
     const[error, setError] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const fetchTourDates = async () => {
         const res = await fetch('/api/tourDates');
-        const data = await res.json();
-        const sortedData = data.sort((a, b) => new Date(a.date) - new Date(b.date));
+        const data: TourDate[] = await res.json();
+        console.log(data);
+        const sortedData = data.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
         setTourDates(sortedData);
     };
 

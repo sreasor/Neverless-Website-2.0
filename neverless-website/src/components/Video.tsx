@@ -10,8 +10,12 @@ const options = {
     }
 };
 
+interface MovieClipProps{
+  videoID: string;
+}
 
-const MovieClip = ({videoID}) => {
+
+const MovieClip = ({videoID}: MovieClipProps) => {
 
     function _onReady(event: any) {
         event.target.pauseVideo();

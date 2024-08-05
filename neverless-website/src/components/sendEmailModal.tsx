@@ -1,19 +1,24 @@
 import { handleClientScriptLoad } from 'next/script';
 import {useState} from 'react';
 
-const SendEmailModal = ({isModal, onClose}) =>
+interface SendEmailModalProps{
+    isModal: boolean;
+    onClose: () => void;
+}
+
+const SendEmailModal = ({isModal, onClose}: SendEmailModalProps) =>
 {
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
-    const handleChangeMessage = (event) =>
+    const handleChangeMessage = (event: React.ChangeEvent<HTMLTextAreaElement>) =>
     {
         setMessage(event.target.value);
     }
 
-    const handleSendEmail = async (event) =>
+    const handleSendEmail = async (event: React.FormEvent<HTMLFormElement>) =>
     {
         event.preventDefault();
 

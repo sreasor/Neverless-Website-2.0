@@ -1,7 +1,13 @@
 
 import {useState} from 'react';
 
-const AddDateModal = ({isModal, onClose, onSuccess}) => {
+interface AddDateModalProps {
+    isModal: boolean;
+    onClose: () => void;
+    onSuccess: () => void; 
+}
+
+const AddDateModal = ({isModal, onClose, onSuccess}: AddDateModalProps) => {
 
     const [error, setError] = useState('');
     const [date, setDate] = useState('');
@@ -11,11 +17,11 @@ const AddDateModal = ({isModal, onClose, onSuccess}) => {
     const [ticketURL, setTicketURL] = useState('');
     const [address, setAddress] = useState('');
 
-    const handleDateChange = (event) => {
+    const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setDate(event.target.value);
     };
 
-    const handleNewDate = async (event) => {
+    const handleNewDate = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         try {
