@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import jwt from 'jsonwebtoken';
+const jwt = require('jsonwebtoken');
 import { cookies } from 'next/headers';
 import { ReactNode } from 'react';
 

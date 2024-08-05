@@ -28,6 +28,7 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
             if (response.ok) {
                 onClose();
                 if (data.role === 'admin') {
+		    console.log("made it to data.role === admin");
                     router.push('/Admin-dashboard');
                 } else {
                     router.push('/user-dashboard');
