@@ -100,8 +100,8 @@ body {
 }
 
 .albumImage{
-  height: 402px;
-  width: 402px;
+  height: 201px;
+  width: 201px;
 }
 
 @media (max-width: 800px){
@@ -114,7 +114,7 @@ body {
 .container {
   position: relative;
   overflow: visible;
-  width: 402px;
+  width: 201px;
 }
 
 .hide1 {
@@ -166,6 +166,14 @@ body {
 
 .upcomingDatesTitle{
   font-size: 30px;
+}
+
+.debutAlbumOut{
+  font-size: 40px;
+}
+
+.availableNow{
+  font-size: 20px;
 }
 
 @media (min-width: 800px)
@@ -263,6 +271,25 @@ body {
 
   .upcomingDatesTitle{
     font-size: 50px;
+  }
+
+  .debutAlbumOut{
+    font-size: 60px;
+  }
+  
+  .availableNow{
+    font-size: 50px;
+  }
+
+  .albumImage{
+    height: 402px;
+    width: 402px;
+  }
+
+  .container {
+    position: relative;
+    overflow: visible;
+    width: 402px;
   }
   
 }

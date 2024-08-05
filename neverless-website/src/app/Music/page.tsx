@@ -69,8 +69,8 @@ function Home() {
       <section id="music" className="font-music flex min-h-screen justify-center w-full items-center flex-col p-10 bg-bg3 bg-cover bg-center bg-gradient-overlay">
         <Navbar onModalOpen={handleOpenModal}/>
         <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
-        <h1 className="z-10 mt-8" style={{fontSize: '60px'}}>Debut album OUT NOW!</h1>
-        <h1 className="z-10 mt-8 text-center" style={{fontSize: '50px'}}>Available on all streaming platforms</h1>
+        <h1 className="z-10 mt-8 text-center debutAlbumOut">Debut album OUT NOW!</h1>
+        <h1 className="z-10 mt-8 text-center availableNow">Available on all streaming platforms</h1>
         <div className="flex justify-center container mt-10 items-center">
           <a href={isLargeScreen ? undefined : "https://open.spotify.com/album/4ei9fgmvR2tH4HNhf4LDgs?si=1hBlDERARtOYwa3aSoli_Q" } className="albumLink">
             <img src="album2.jpg" className="w-full h-full object-cover albumImage" alt="Album" />
@@ -111,7 +111,7 @@ function Home() {
             />
           </a>
         </div>
-        <h1 className="z-10 mt-20" style={{fontSize: '50px'}}>Check out our newest live video!</h1>
+        <h1 className="z-10 mt-20 debutAlbumOut">Check out our newest live video!</h1>
         <div className="z-10 mt-10">
           <Video videoID={"BODwLDiu-es"}></Video>
         </div>
