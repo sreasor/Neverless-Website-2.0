@@ -22,7 +22,7 @@ const formatDate = (dateString: string) => {
   return `${month}/${day}/${year}`;
 }
 
-export default function Home() {
+function Home() {
 
   const [tourDates, setTourDates] = useState<TourDate[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -60,7 +60,6 @@ export default function Home() {
   }
 
   return (
-    <SuspenseWrapper>
       <main className="no-scroll">
         <section id="home" className="font-home flex min-h-screen w-full items-center flex-col p-10 bg-bg1 bg-cover bg-center bg-gradient-overlay">
           <Navbar onModalOpen={handleOpenModal} />
@@ -85,6 +84,13 @@ export default function Home() {
           </ul>
         </section>
       </main>
+  );
+}
+
+export default function Page() {
+  return(
+    <SuspenseWrapper>
+      <Home></Home>
     </SuspenseWrapper>
   );
 }
