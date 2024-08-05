@@ -69,7 +69,7 @@ export default function Home() {
 
   return (
     <main>
-      <section id="contact" className="font-home flex min-h-screen w-full items-center flex-col p-10 bg-bg6 bg-cover bg-center bg-gradient-overlay">
+      <section id="contact" className="font-contact flex min-h-screen w-full items-center flex-col p-10 bg-bg6 bg-cover bg-center bg-gradient-overlay">
         <Navbar onModalOpen={handleOpenModal}/>
         <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
         <h1 className="z-10 mt-10 text-center lg:text-5xl sm:text-xl">Email: neverlessmakesmusic@gmail.com</h1>

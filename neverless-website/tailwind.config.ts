@@ -25,6 +25,7 @@ const config: Config = {
         'home': ['Cinzel Decorative', 'sans-serif'],
         'music': ['Amatic SC', 'sans-serif'],
         'merch': ['Monomaniac One', 'sans-serif'],
+        'contact': ['Source Code Pro', 'sans-serif']
       },
       screens: {
         'sm': '400px',  // Minimum width of 400px
