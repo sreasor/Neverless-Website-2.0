@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import AddDateModal from "../../components/AddDateModal"
 
 
-const formatDate = (dateString) => {
+const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     const day = String(date.getUTCDate()).padStart(2, '0');
     const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // Months are zero-indexed
