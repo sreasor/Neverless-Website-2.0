@@ -33,7 +33,7 @@ const EditDates = () => {
         fetchTourDates();
     }, []);
 
-    const handleDelete = async (id) =>
+    const handleDelete = async (id: number) =>
     {
         try{
             const response = await fetch('api/tourDates', {

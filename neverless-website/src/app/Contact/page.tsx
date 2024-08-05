@@ -33,7 +33,7 @@ export default function Home() {
     router.push('/Contact'); // Redirect back to home (or handle as needed)
   }
 
-  const handleSignUp = async (event) => 
+  const handleSignUp = async (event: React.FormEvent<HTMLFormElement>) => 
   {
     event.preventDefault();
     console.log("fName: " + fName);

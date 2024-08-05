@@ -1,10 +1,15 @@
 import { redirect } from 'next/navigation';
 import jwt from 'jsonwebtoken';
 import { cookies } from 'next/headers';
+import { ReactNode } from 'react';
+
+interface EditDatesLayoutProps {
+    children: ReactNode;
+  }
 
 const SECRET_KEY = process.env.JWT_SECRET;
 
-export default async function EditDatesLayout({ children }) {
+export default async function EditDatesLayout({ children }: EditDatesLayoutProps) {
 
     // retrieve cookies
     const cookieStore = cookies();
