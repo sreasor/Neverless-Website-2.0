@@ -7,7 +7,7 @@ interface AdminDashboardLayoutProps {
     children: ReactNode;
   }
 
-const SECRET_KEY = process.env.JWT_SECRET;
+const SECRET_KEY = process.env.JWT_SECRET as string;
 
 export default async function AdminDashboardLayout({ children }: AdminDashboardLayoutProps) {
 
