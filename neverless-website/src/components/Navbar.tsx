@@ -35,7 +35,7 @@ interface NavLinkProps{
 const NavLink = ({ href, label }: NavLinkProps) => {
     return (
         <li className="nav-item relative">
-            <Link href={href} className="no-underline text-xl" style={{fontSize: '30px', color: '#ffa645'}}>
+            <Link href={href} className="no-underline text-xl navLink">
                 {label}
             </Link>
         </li>

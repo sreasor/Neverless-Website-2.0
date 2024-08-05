@@ -142,6 +142,20 @@ body {
   transform: scale(0);
 }
 
+.navLink {
+  font-size: 15px;
+  color: #ffa645;
+}
+
+.tourDate {
+  font-size: 15px;
+  color: black;
+}
+
+.homeDiv {
+  padding-top: 100px;
+}
+
 @media (min-width: 800px)
 {
   .albumImage:hover{
@@ -209,4 +223,18 @@ body {
     display: block;
     transform: scale(5) translateX(-66px);
   }
+  
+  .navLink {
+    font-size: 30px;
+  }
+
+  .tourDate {
+    font-size: 20px;
+    color: black;
+  }
+
+  .homeDiv{
+    padding-top: 150px;
+  }
+  
 }

@@ -64,7 +64,7 @@ function Home() {
         <section id="home" className="font-home flex min-h-screen w-full items-center flex-col p-10 bg-bg1 bg-cover bg-center bg-gradient-overlay">
           <Navbar onModalOpen={handleOpenModal} />
           <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
-          <div className="flex justify-between flex-col pt-40">
+          <div className="flex justify-between flex-col homeDiv">
             <p className="text-center z-10 font-bold" style={{fontSize: '70px', color: '#ffa645'}}>Neverless</p>
             <p className="text-center z-10 mb-12" style={{fontSize: '20px', color: '#ffa645'}}>New album: out now!</p>
             <a href="#datesA" className="z-10 hero-btn text-center">Catch us at a show near you!</a>
@@ -76,7 +76,7 @@ function Home() {
             {tourDates.map((date) => (
               <a href={date.ticket_url} className='w-4/5 hover:scale-110 duration-300 pointer-events:auto'>
                 <li key={date.id} className="rounded-2xl text-center pt-8 pb-8" style={{background: '#f9ca3f', border: '2px solid #e48734'}}>
-                  <p className="font-bold pb-5" style={{color: 'black', fontSize:'20px'}}>{formatDate(date.date)} - {date.city}, {date.state} - {date.venue}</p>
+                  <p className="font-bold pb-5 tourDate">{formatDate(date.date)} - {date.city}, {date.state} - {date.venue}</p>
                   <p style={{color: '#a93a24'}}>{date.address}</p>
                 </li>
               </a>
