@@ -7,7 +7,7 @@ interface NavbarProps{
 
 const Navbar = ({ onModalOpen }: NavbarProps) => {
     return (
-        <div className="font-home z-10 flex justify-between sm:space-x-10 lg:space-x-20">
+        <div className="font-home z-10 flex justify-between sm:space-x-10 lg:space-x-20 items-center">
             <ul className="z-10 flex items-center sm:space-y-4 lg:space-y-0 lg:space-x-28 nav-links1 sm:flex-col lg:flex-row"> 
                 <NavLink href="/" label="Home"/>
                 <NavLink href="/#datesA" label="Dates"/>

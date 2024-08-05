@@ -73,7 +73,7 @@ body {
 	color: #fff;
 	border: 1px solid #fff;
 	padding: 12px 34px;
-	font-size: 24px;
+	font-size: 15px;
 	background: transparent;
 	position: relative;
 	cursor: pointer;
@@ -153,7 +153,19 @@ body {
 }
 
 .homeDiv {
-  padding-top: 100px;
+  padding-top: 150px;
+}
+
+.dateAddr {
+  font-size: 10px;
+}
+
+.neverlessTitle{
+  font-size: 40px;
+}
+
+.upcomingDatesTitle{
+  font-size: 30px;
 }
 
 @media (min-width: 800px)
@@ -235,6 +247,22 @@ body {
 
   .homeDiv{
     padding-top: 150px;
+  }
+
+  .dateAddr{
+    font-size: 15px;
+  }
+
+  .hero-btn{
+    font-size: 24px;
+  }
+
+  .neverlessTitle{
+    font-size: 70px;
+  }
+
+  .upcomingDatesTitle{
+    font-size: 50px;
   }
   
 }
