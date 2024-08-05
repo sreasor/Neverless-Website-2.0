@@ -111,7 +111,7 @@ function Home() {
             />
           </a>
         </div>
-        <h1 className="z-10 mt-20 debutAlbumOut">Check out our newest live video!</h1>
+        <h1 className="z-10 mt-20 debutAlbumOut text-center">Check out our newest live video!</h1>
         <div className="z-10 mt-10">
           <Video videoID={"BODwLDiu-es"}></Video>
         </div>

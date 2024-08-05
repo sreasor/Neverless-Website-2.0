@@ -20,8 +20,8 @@ const MovieClip = ({ videoID }: MovieClipProps) => {
       if (window.innerWidth < 800) {
         // 10% smaller
         setVideoOptions({
-          height: `${320 * 0.9}`,
-          width: `${500 * 0.9}`,
+          height: `${320 * 0.75}`,
+          width: `${500 * 0.75}`,
           playerVars: {
             autoplay: 1,
             controls: 1,
