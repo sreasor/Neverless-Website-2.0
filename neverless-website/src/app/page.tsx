@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect, Suspense} from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Navbar from "../components/Navbar";
 import LoginModal from "../components/LoginModal";
+import SuspenseWrapper from '../components/SuspenseWrapper';
 
 interface TourDate {
   date: string; // Assuming the date is a string; if it's a Date object, use Date instead
@@ -61,7 +62,7 @@ export default function Home() {
   }
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <SuspenseWrapper>
       <main className="no-scroll">
         <section id="home" className="font-home flex min-h-screen w-full items-center flex-col p-10 bg-bg1 bg-cover bg-center bg-gradient-overlay">
           <Navbar onModalOpen={handleOpenModal} />
@@ -86,6 +87,6 @@ export default function Home() {
           </ul>
         </section>
       </main>
-    </Suspense>
+    </SuspenseWrapper>
   );
 }
