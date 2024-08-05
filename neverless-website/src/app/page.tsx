@@ -76,7 +76,7 @@ function Home() {
             {tourDates.map((date) => (
               <a href={date.ticket_url} className='w-4/5 hover:scale-110 duration-300 pointer-events:auto'>
                 <li key={date.id} className="rounded-2xl text-center pt-8 pb-8" style={{background: '#f9ca3f', border: '2px solid #e48734'}}>
-                  <p className="font-bold pb-5 tourDate">{formatDate(date.date)} - {date.city}, {date.state} - {date.venue}</p>
+                  <p className="font-bold pb-5 tourDate">{formatDate(date.date)} - {date.city}, {date.state}<br></br>{date.venue}</p>
                   <p className="dateAddr" style={{color: '#a93a24'}}>{date.address}</p>
                 </li>
               </a>
