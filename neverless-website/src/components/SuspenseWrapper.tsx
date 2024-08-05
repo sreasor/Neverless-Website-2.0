@@ -1,4 +1,6 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
+const Navbar = lazy(() => import('./Navbar'));
+const LoginModal = lazy(() => import('./LoginModal'));
 
 const SuspenseWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
@@ -8,4 +10,4 @@ const SuspenseWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) 
     );
 };
 
-export default SuspenseWrapper;
+export {SuspenseWrapper, Navbar, LoginModal};
