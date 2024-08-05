@@ -12,7 +12,7 @@ const config: Config = {
         'bg1': "url('/liveband.jpg')",
         'bg2': "url('/album2.jpg')",
         'bg3': "url('/music.jpg')",
-        'bg4': "url('/flea.jpg')",
+        'bg4': "url('/Flea.jpg')",
         'bg5': "url('/About.jpg')",
         'bg6': "url('/RRU.jpg')"
       },
