@@ -33,12 +33,12 @@ function Home() {
       <section id="about" className="font-home flex min-h-screen w-full items-center flex-col p-10 bg-bg5 bg-cover bg-center bg-gradient-overlay">
         <Navbar onModalOpen={handleOpenModal}/>
         <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
-        <p className="z-10 text-center mt-32" style={{fontSize: '30px'}}>
-          Neverless is a high-energy alternative rock band formed <br></br>
-          in 2018 from Sarasota, FL. Inspired by a vision to blend <br></br>
-          genres and break musical barriers, Neverless is sure to give <br></br>
-          fans of any genre something to appreciate. From metal to <br></br>
-          punk, and jazz to funk (as well as everything in between), <br></br>
+        <p className="z-10 text-center mt-32 aboutText">
+          Neverless is a high-energy alternative rock band formed 
+          in 2018 from Sarasota, FL. Inspired by a vision to blend 
+          genres and break musical barriers, Neverless is sure to give 
+          fans of any genre something to appreciate. From metal to
+          punk, and jazz to funk (as well as everything in between),
           Neverless brings it all!
         </p>
       </section>

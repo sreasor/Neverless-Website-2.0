@@ -88,7 +88,7 @@ const EditDates = () => {
                     <a href='/'>
                         <button className="bg-blue-500 h-20 w-40 m-8 rounded-2xl hover:shadow-2xl hover:bg-blue-700 hover:-translate-y-1 hover:scale-110 transition-all ease-in-out duration-300" style={{fontSize: '30px'}}>Home</button>
                     </a>
-                    <p className="text-center font-bold mt-12 mb-12" style={{fontSize: '50px', color: '#fff'}}>Upcoming Tour Dates</p>
+                    <p className="text-center font-bold mt-12 mb-12 upcomingDatesTitle" style={{ color: '#fff'}}>Upcoming Tour Dates</p>
                     <div className="w-56"></div>
                 </div>
                 <AddDateModal isModal={isModalOpen} onClose={handleCloseModal} onSuccess={handleAddDateSuccess}/>
@@ -100,8 +100,8 @@ const EditDates = () => {
                     {tourDates.map((date) => (
                         <div className='w-4/5'>
                             <li key={date.id} className="rounded-2xl text-center pt-8 pb-8" style={{background: '#f9ca3f', border: '2px solid #e48734'}}>
-                                <p className="font-bold pb-5" style={{color: 'black', fontSize:'20px'}}>{formatDate(date.date)} - {date.city}, {date.state} - {date.venue}</p>
-                                <p style={{color: '#a93a24',}}>{date.address}</p>
+                                <p className="font-bold pb-5 tourDate" style={{color: 'black'}}>{formatDate(date.date)} - {date.city}, {date.state} - {date.venue}</p>
+                                <p className="dateAddr" style={{color: '#a93a24',}}>{date.address}</p>
                                 <button onClick={() => handleDelete(date.id)}>
                                     <FontAwesomeIcon icon={faTrashCan} className="mt-4"style={{color: 'black', fontSize: '30px'}}/>
                                 </button>

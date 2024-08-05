@@ -48,7 +48,7 @@ const LoginModal = ({ isOpen, onClose }: LoginModalProps) => {
 
     return (
         <div className="font-home transition-all z-50 fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <div className="h-1/2 w-1/2 p-6 bg-white shadow-md rounded flex flex-col items-center border-4 border-solid" style={{borderColor: '#ffa645'}}>
+            <div className="loginModal p-6 bg-white shadow-md rounded flex flex-col items-center border-4 border-solid" style={{borderColor: '#ffa645'}}>
                 <form onSubmit={handleLogin} className="flex flex-col w-full items-center mb-4">
                     <input 
                         type="email" 

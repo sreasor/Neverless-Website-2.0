@@ -76,7 +76,7 @@ const SendEmailModal = ({isModal, onClose}: SendEmailModalProps) =>
 
     return (
         <div className="transition-all z-50 fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <div className="h-3/4 w-1/2 p-6 bg-white shadow-md rounded flex flex-col items-center border-4 border-solid" style={{borderColor: '#ffa645'}}>
+            <div className="sendEmailModal p-6 bg-white shadow-md rounded flex flex-col items-center border-4 border-solid" style={{borderColor: '#ffa645'}}>
                 <form onSubmit={handleSendEmail} className="flex flex-col w-full items-center mb-4">
                     <input
                         type="text"

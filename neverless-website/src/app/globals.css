@@ -176,6 +176,38 @@ body {
   font-size: 20px;
 }
 
+.merchComing {
+  font-size: 35px;
+}
+
+.aboutText{
+  font-size: 17px;
+}
+
+.contact-form{
+  width: 90%;
+  height: 25%;
+}
+
+.loginModal{
+  width: 90%;
+  height: 40%;
+}
+
+.adminDashText{
+  font-size: 17px;
+}
+
+.adminTitle{
+  font-size: 30px;
+  padding-top: 50px;;
+}
+
+.sendEmailModal{
+  width: 90%;
+  height: 75%
+}
+
 @media (min-width: 800px)
 {
   .albumImage:hover{
@@ -290,6 +322,37 @@ body {
     position: relative;
     overflow: visible;
     width: 402px;
+  }
+
+  .merchComing{
+    font-size: 80px;
+  }
+
+  .aboutText{
+    font-size: 30px;
+  }
+
+  .contact-form{
+    width: 50%;
+    height: 50%;
+  }
+  
+  .loginModal{
+    width: 50%;
+    height: 50%;
+  }
+
+  .adminDashText{
+    font-size: 30px;
+  }
+
+  .adminTitle{
+    font-size: 50px;
+  }
+
+  .sendEmailModal{
+    width: 50%;
+    height: 75%
   }
   
 }
