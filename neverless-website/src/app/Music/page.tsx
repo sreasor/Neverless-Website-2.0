@@ -1,15 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import Navbar from "../../components/Navbar";
-import LoginModal from "@/components/LoginModal";
-import {useEffect, useState} from 'react';
+import {useEffect, useState, lazy} from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import Video from "../../components/Video";
+const Video = lazy(() => import('../../components/Video'));
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify, faApple, faAmazon, faSoundcloud, faYoutube} from '@fortawesome/free-brands-svg-icons';
+import {SuspenseWrapper, Navbar, LoginModal} from '../../components/SuspenseWrapper';
 
-export default function Home() {
+function Home() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
@@ -119,5 +117,13 @@ export default function Home() {
         </div>
       </section>
     </main>
+  );
+}
+
+export default function Page(){
+  return (
+    <SuspenseWrapper>
+      <Home></Home>
+    </SuspenseWrapper>
   );
 }

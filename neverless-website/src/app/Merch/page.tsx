@@ -1,11 +1,10 @@
 "use client";
 
-import Navbar from "../../components/Navbar";
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import LoginModal from "../../components/LoginModal";
+import {SuspenseWrapper, Navbar, LoginModal} from '../../components/SuspenseWrapper';
 
-export default function Home() {
+function Home() {
 
   
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,5 +36,13 @@ export default function Home() {
         <h1 className="mt-40 z-10 text-center" style={{fontSize: '80px'}}>Merch coming soon!</h1>
       </section>
     </main>
+  );
+}
+
+export default function Page(){
+  return (
+    <SuspenseWrapper>
+      <Home></Home>
+    </SuspenseWrapper>
   );
 }
