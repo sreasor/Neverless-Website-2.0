@@ -70,7 +70,7 @@ function Home() {
     <main>
       <section id="contact" className="font-contact flex min-h-screen w-full items-center flex-col p-10 bg-bg6 bg-cover bg-center bg-gradient-overlay space-y-48" style={{color: 'white'}}>
         <Navbar onModalOpen={handleOpenModal}/>
-        <h1 className="z-10 mt-10 text-center lg:text-5xl sm:text-xl">Email: neverlessmakesmusic@gmail.com</h1>
+        <h1 className="z-10 mt-10 text-center computers:text-5xl phone:text-xl">Email: neverlessmakesmusic@gmail.com</h1>
         <div className=" z-10 p-6 mt-10 bg-white rounded flex flex-col items-center border-4 border-solid contact-form" style={{borderColor: '#ffa645'}}>
           <form onSubmit={handleSignUp} className="flex flex-col w-full items-center mb-4" title="Join our mailing list!">
             <h1 className="text-center pb-10" style={{fontSize:'20px', color: 'black'}}>

@@ -7,8 +7,8 @@ interface NavbarProps{
 
 const Navbar = ({ onModalOpen }: NavbarProps) => {
     return (
-        <div className="font-home z-10 flex justify-between sm:space-x-10 lg:space-x-20 items-center">
-            <ul className="z-10 flex items-center sm:space-y-4 lg:space-y-0 lg:space-x-28 nav-links1 sm:flex-col lg:flex-row"> 
+        <div className="font-home z-10 flex justify-between phone:space-x-10 computers:space-x-20 items-center">
+            <ul className="z-10 flex items-center phone:space-y-4 computers:space-y-0 computers:space-x-28 nav-links1 phone:flex-col computers:flex-row"> 
                 <NavLink href="/" label="Home"/>
                 <NavLink href="/#datesA" label="Dates"/>
                 <NavLink href="/Music" label="Music"/>
@@ -18,7 +18,7 @@ const Navbar = ({ onModalOpen }: NavbarProps) => {
                     <img src="logo.png" width="239.1125" height="125" color="transparent" className="hover:-translate-y-1 hover:scale-110 duration-300"></img>
                 </button>
             </div>
-            <ul className="z-10 flex items-center sm:space-y-4 lg:space-y-0 lg:space-x-20 nav-links1 sm:flex-col lg:flex-row"> 
+            <ul className="z-10 flex items-center phone:space-y-4 computers:space-y-0 computers:space-x-20 nav-links1 phone:flex-col computers:flex-row"> 
                 <NavLink href="/Merch" label="Merch"/>
                 <NavLink href="/About" label="About"/>
                 <NavLink href="/Contact" label="Contact"/>

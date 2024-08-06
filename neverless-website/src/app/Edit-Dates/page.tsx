@@ -84,7 +84,7 @@ const EditDates = () => {
     return (
         <main>
             <section id="datesA" className="font-home min-h-screen bg-bg2 bg-cover flex flex-col pb-20">
-                <div className="flex flex-col items-center lg:flex-row lg:justify-between">
+                <div className="flex flex-col items-center computers:flex-row computers:justify-between">
                     <a href='/'>
                         <button className="bg-blue-500 h-20 w-40 m-8 rounded-2xl hover:shadow-2xl hover:bg-blue-700 hover:-translate-y-1 hover:scale-110 transition-all ease-in-out duration-300" style={{fontSize: '30px'}}>Home</button>
                     </a>

@@ -15,7 +15,7 @@ const AdminDashboard = () => {
         <main>
             <section id="Admin Dashboard" className="bg-white min-h-screen p-10">
                 <div className="flex flex-col">
-                    <div className="flex flex-col lg:flex-row items-center lg:justify-between lg:w-full">
+                    <div className="flex flex-col computers:flex-row items-center computers:justify-between computers:w-full">
                         <button
                             onClick={() => router.push('/')}
                             className="bg-blue-500 h-20 w-40 m-8 rounded-2xl hover:shadow-2xl hover:bg-blue-700 hover:-translate-y-1 hover:scale-110 transition-all ease-in-out duration-300"

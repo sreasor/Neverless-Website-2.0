@@ -28,8 +28,8 @@ const config: Config = {
         'contact': ['Source Code Pro', 'sans-serif']
       },
       screens: {
-        'sm': '400px',  // Minimum width of 400px
-        'lg': '1400px', // Minimum width of 1920px
+        'phone': '0px',  // Minimum width of 400px
+        'computers': '1400px', // Minimum width of 1920px
       },
     },
   },
