@@ -66,7 +66,7 @@ function Home() {
 
   return (
     <main>
-      <section id="music" className="font-music flex min-h-screen justify-center w-full items-center flex-col p-10 bg-bg3 bg-cover bg-center bg-gradient-overlay">
+      <section id="music" className="font-music flex min-h-screen justify-center w-full items-center flex-col p-10 bg-bg3 bg-cover bg-center bg-gradient-overlay" style={{color: 'white'}}>
         <Navbar onModalOpen={handleOpenModal}/>
         <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
         <h1 className="z-10 mt-8 text-center debutAlbumOut">Debut album OUT NOW!</h1>

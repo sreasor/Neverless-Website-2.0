@@ -30,7 +30,7 @@ function Home() {
 
   return (
     <main>
-      <section id="about" className="font-home flex min-h-screen w-full items-center flex-col p-10 bg-bg5 bg-cover bg-center bg-gradient-overlay">
+      <section id="about" className="font-home flex min-h-screen w-full items-center flex-col p-10 bg-bg5 bg-cover bg-center bg-gradient-overlay" style={{color: 'white'}}>
         <Navbar onModalOpen={handleOpenModal}/>
         <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
         <p className="z-10 text-center mt-32 aboutText">
