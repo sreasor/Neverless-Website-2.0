@@ -52,6 +52,16 @@ body {
   z-index: 0;
 }
 
+.albumImage2{
+  width: 160px;
+  height: 160px
+}
+
+.albumImage2:hover{
+  transform: scale(1.2);
+  transition: transform 300ms ease;
+}
+
 .nav-links1 li::after {
   content: '';
   width: 0%;
@@ -102,6 +112,7 @@ body {
 .albumImage{
   height: 201px;
   width: 201px;
+  background-color: blue;
 }
 
 @media (max-width: 800px){
@@ -113,7 +124,6 @@ body {
 
 .container {
   position: relative;
-  overflow: visible;
   width: 201px;
 }
 
@@ -228,11 +238,12 @@ body {
   }
   
   .icon-link{
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 2rem; /* Adjust to match the icon size */
-    width: 2rem; /* Adjust to match the icon size */
+    height: 24px; /* Adjust to match the icon size */
+    width: 24px; /* Adjust to match the icon size */
     background: transparent;
   }
   

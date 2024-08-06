@@ -66,14 +66,14 @@ function Home() {
 
   return (
     <main>
-      <section id="music" className="font-music flex min-h-screen justify-center w-full items-center flex-col p-10 bg-bg3 bg-cover bg-center bg-gradient-overlay" style={{color: 'white'}}>
+      <section id="music" className="font-music flex justify-center items-center flex-col p-10 bg-bg3 bg-cover bg-center bg-gradient-overlay" style={{color: 'white'}}>
         <Navbar onModalOpen={handleOpenModal}/>
         <LoginModal isOpen={isModalOpen} onClose={handleCloseModal} />
         <h1 className="z-10 mt-8 text-center debutAlbumOut">Debut album OUT NOW!</h1>
         <h1 className="z-10 mt-8 text-center availableNow">Available on all streaming platforms</h1>
-        <div className="flex justify-center container mt-10 items-center">
+        <div className="flex justify-center container mt-10 items-center z-20">
           <a href={isLargeScreen ? undefined : "https://open.spotify.com/album/4ei9fgmvR2tH4HNhf4LDgs?si=1hBlDERARtOYwa3aSoli_Q" } className="albumLink">
-            <img src="album2.jpg" className="w-full h-full object-cover albumImage" alt="Album" />
+            <img src="album2.jpg" className="albumImage" alt="Album" />
           </a>
           <a className="absolute z-20 icon-link items-center justify-center" href={"https://youtube.com/playlist?list=OLAK5uy_nx8SjaBqnU6s4v6cztokmMXY0OQmFpX-Y&si=og-TwT1Iq56acyMS"}>
             <FontAwesomeIcon
@@ -111,6 +111,9 @@ function Home() {
             />
           </a>
         </div>
+        <a href={isLargeScreen ? undefined : "https://open.spotify.com/album/4ei9fgmvR2tH4HNhf4LDgs?si=1hBlDERARtOYwa3aSoli_Q"} className="absolute albumImage2 mb-32">
+          <img src="album2.jpg" className="" alt="Album" />
+        </a>
         <h1 className="z-10 mt-20 debutAlbumOut text-center">Check out our newest live video!</h1>
         <div className="z-10 mt-10">
           <Video videoID={"BODwLDiu-es"}></Video>
