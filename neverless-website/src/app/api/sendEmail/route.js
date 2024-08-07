@@ -5,10 +5,6 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 export async function POST(req) {
     const { recipients, subject, message } = await req.json();
 
-    console.log(recipients);
-    console.log(subject);
-    console.log(message);
-
     const emails = recipients[0].map(({ firstName, email }) => ({
         to: email,
         from: 'neverlessmakesmusic@neverlessband.com',

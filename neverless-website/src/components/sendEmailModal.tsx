@@ -31,8 +31,6 @@ const SendEmailModal = ({isModal, onClose}: SendEmailModalProps) =>
             if (response.ok){
                 const recipients = await response.json();
 
-                console.log(recipients);
-
                 const sendResponse = await fetch('/api/sendEmail', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },

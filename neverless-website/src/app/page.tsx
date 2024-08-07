@@ -37,7 +37,6 @@ function Home() {
       // sort the data
       const sortedData = data.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
       setTourDates(sortedData);
-      console.log(data);
     }
     fetchTourDates();
   }, []);

@@ -35,7 +35,6 @@ const EditDates = () => {
     const fetchTourDates = async () => {
         const res = await fetch('/api/tourDates');
         const data: TourDate[] = await res.json();
-        console.log(data);
         const sortedData = data.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
         setTourDates(sortedData);
     };

@@ -35,8 +35,6 @@ function Home() {
   const handleSignUp = async (event: React.FormEvent<HTMLFormElement>) => 
   {
     event.preventDefault();
-    console.log("fName: " + fName);
-    console.log("lName: " + lName);
 
     try {
       const response = await fetch('api/emailList', {
@@ -46,8 +44,7 @@ function Home() {
         },
         body: JSON.stringify({fName, lName, email}),
       });
-
-      console.log('made it here');
+      
       const data = await response.json();
       if (!response.ok) {
         setError(data.message);
